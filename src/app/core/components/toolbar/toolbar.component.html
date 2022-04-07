@@ -1,16 +1,16 @@
 <div class="toolbar" role="banner">
-  <span style="font-size: 48px; color: rgb(240, 236, 0);">
+  <span class="toolbar__span">
     <i class="fa-solid fa-cloud-sun"></i>
   </span>
     <span>Weather</span>
       <div class="spacer"></div>
-      <button mat-raised-button class="toolbar__button"color="primary">
-        Add city
+      <button mat-raised-button (click)="openDialog()" class="toolbar__button" color="primary">
+        Add card
       </button>
-      <button mat-raised-button class="toolbar__button"color="primary">
+      <button mat-raised-button class="toolbar__button" color="primary">
         Start tracking
       </button>
-      <button mat-raised-button class="toolbar__button"color="primary">
+      <button mat-raised-button class="toolbar__button" color="primary">
         Stop tracking
       </button>
 </div>

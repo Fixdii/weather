@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Add card</h1>
+<div mat-dialog-content>
+   <p>Enter the name of the city you want to search.</p>
+   <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>City</mat-label>
+      <input type="text"
+             placeholder="Add city"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button (click)="onSubmit()" cdkFocusInitial>Ok</button>
+</div>

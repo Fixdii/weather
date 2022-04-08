@@ -9,6 +9,7 @@ p {
   height: 250px;
   display: flex;
   flex-direction: column;
+  background: aliceblue;
 
   &__check {
     cursor: pointer;

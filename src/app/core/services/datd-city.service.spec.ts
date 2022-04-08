@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SearchCityService } from './search-city.service';
+import { SearchCityService } from './data-city.service';
 
 describe('SearchCityService', () => {
   let service: SearchCityService;

@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { UICity } from '../../models/city.entity';
-import { SearchCityService } from '../../services/search-city.service';
+import { SearchCityService } from '../../services/data-city.service';
 
 @Component({
   selector: 'app-card-city',
   templateUrl: './card-city.component.html',
-  styleUrls: ['./card-city.component.scss']
+  styleUrls: ['./card-city.component.scss'],
 })
 export class CardCityComponent implements OnInit {
-  citys: any;
-  l: UICity[] = [];
-  src = "https://openweathermap.org/img/w/04n.png"
-  constructor(private searchCity: SearchCityService) { }
+  cities: UICity[] = [];
 
-  ngOnInit(): void {
-    this.citys = this.searchCity.getCitys()
-    this.l = JSON.parse(this.citys)
-    console.log(JSON.parse(this.citys));
-    
+  constructor(private searchCity: SearchCityService) {
+    this.cities = this.searchCity.getCitys();
   }
 
+  ngOnInit(): void {
+    this.searchCity.sbj.subscribe((data) => {
+      this.cities = data;
+    });    
+  }
+
+  deleteCard(name: string): void {
+    this.cities = this.cities.filter( city => city.name !== name)
+    this.searchCity.setCitys(this.cities);
+  }
 }

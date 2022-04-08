@@ -1,9 +1,27 @@
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.error{
+  color: red;
+ }
+
+.dialog-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__close {
+    cursor: pointer;
   }
-  
-  .example-full-width {
-    width: 100%;
+
+  &__headline {
+    margin: 0;
   }
+}

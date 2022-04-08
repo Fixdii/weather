@@ -1,6 +1,14 @@
-<h1 mat-dialog-title>Add card</h1>
+<div class="dialog-title">
+  <h1 mat-dialog-title class="dialog-title__headline">Add card</h1>
+  <span class="dialog-title__close" (click)="closeDialog()"><i class="fa-solid fa-xmark"></i></span>
+</div>
 <div mat-dialog-content>
    <p>Enter the name of the city you want to search.</p>
+   <div class="error" *ngIf="error">
+    <div class="error_server">
+      {{error}}
+    </div>
+  </div>
    <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>City</mat-label>
@@ -19,6 +27,6 @@
   </form>
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close (click)="close()">Close</button>
+  <button mat-button mat-dialog-close>Close</button>
   <button mat-button (click)="onSubmit()" cdkFocusInitial>Ok</button>
 </div>

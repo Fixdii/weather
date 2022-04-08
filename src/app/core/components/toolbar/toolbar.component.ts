@@ -12,9 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    this.dialog.open(ModalComponent);
-    console.log(1);
-    
+    this.dialog.open(ModalComponent);    
   }
 
   ngOnInit(): void {

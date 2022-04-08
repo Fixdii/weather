@@ -8,14 +8,15 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
 
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/components/toolbar/toolbar.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { ModalComponent } from './core/components/modal/modal.component';
-import { HttpClientModule } from '@angular/common/http';
-import { SityCardComponent } from './core/components/сity-card/сity-card.component';
+import { CardCityComponent } from './core/components/card-city/card-city.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { SityCardComponent } from './core/components/сity-card/сity-card.compo
     HeaderComponent,
     FooterComponent,
     ModalComponent,
-    SityCardComponent
+    CardCityComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +36,10 @@ import { SityCardComponent } from './core/components/сity-card/сity-card.compo
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

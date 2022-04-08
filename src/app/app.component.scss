@@ -1,0 +1,14 @@
+.questionsCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 160px;
+    padding-top: 70px;
+    gap: 30px 70px;
+  
+    &_row {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  }

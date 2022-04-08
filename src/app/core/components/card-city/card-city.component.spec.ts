@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SityCardComponent } from './сity-card.component';
+import { CardCityComponent } from './card-city.component';
 
-describe('SityCardComponent', () => {
-  let component: SityCardComponent;
-  let fixture: ComponentFixture<SityCardComponent>;
+describe('CardCityComponent', () => {
+  let component: CardCityComponent;
+  let fixture: ComponentFixture<CardCityComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SityCardComponent ]
+      declarations: [ CardCityComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SityCardComponent);
+    fixture = TestBed.createComponent(CardCityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

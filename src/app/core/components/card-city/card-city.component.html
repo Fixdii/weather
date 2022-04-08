@@ -1,0 +1,14 @@
+<div class="questionCard" *ngFor="let city of l">
+    <mat-card class="exampleCard">
+      <span class="exampleCard__check"><i class="fa-solid fa-xmark"></i></span>
+      <mat-card-title class= "card-title">{{city.name}}</mat-card-title>
+      <mat-card-subtitle>{{city.dt | date:"yyyy-MM-dd HH:mm:ss"}}</mat-card-subtitle>
+      <mat-card-content class="card-content">
+        <div class="info">
+          <p>{{city.weather[0].description[0].toUpperCase() + city.weather[0].description.slice(1)}}</p>
+          <img class="info__img" src="https://openweathermap.org/img/w/{{city.weather[0].icon}}.png" alt="Weather">
+        </div>
+        <span class="card-content__span">{{ city.temp > 0 ? '+' : ''}}{{city.temp}}</span>
+      </mat-card-content>
+    </mat-card>  
+</div>

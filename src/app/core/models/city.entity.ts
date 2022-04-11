@@ -15,3 +15,7 @@ export type UICity = {
     temp: number;    
     weather: Weather[];
 }
+
+export type City = {
+    name: string[];
+}

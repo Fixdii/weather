@@ -1,7 +1,7 @@
 
-<div class="questionCard">
+<div class="questionCard" >
     <mat-card class="exampleCard" *ngFor="let city of cities">
-      <span class="exampleCard__check" (click)="deleteCard(city.name)"><i class="fa-solid fa-xmark"></i></span>
+      <span class="exampleCard__check"><i class="fa-solid fa-xmark pointer" (click)="deleteCard(city.name)"></i></span>
       <mat-card-title class= "card-title">{{city.name}}</mat-card-title>
       <mat-card-subtitle>{{city.dt * 1000 | date:"yyyy-MM-dd HH:mm:ss"}}</mat-card-subtitle>
       <mat-card-content class="card-content">
@@ -12,4 +12,7 @@
         <span class="card-content__span">{{ city.temp > 0 ? '+' : ''}}{{city.temp}}</span>
       </mat-card-content>
     </mat-card>  
+    <div class="questionCard__placeholder" *ngIf="cities.length ===0">
+      <h1>Add card</h1>
+    </div>
 </div>

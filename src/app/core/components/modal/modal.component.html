@@ -1,15 +1,15 @@
 <div class="dialog-title">
-  <h1 mat-dialog-title class="dialog-title__headline">Add card</h1>
+  <h1 mat-dialog-title class="dialog-title__headline">{{ data.delete ? 'Delete card' : 'Add card' }}</h1>
   <span class="dialog-title__close" (click)="closeDialog()"><i class="fa-solid fa-xmark"></i></span>
 </div>
 <div mat-dialog-content>
-   <p>Enter the name of the city you want to search.</p>
+   <p>{{ data.delete ? 'Are you sure ?' : 'Enter the name of the city you want to search.' }}</p>
    <div class="error" *ngIf="error">
     <div class="error_server">
       {{error}}
     </div>
   </div>
-   <form class="example-form">
+   <form class="example-form" *ngIf="!data.delete">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>City</mat-label>
       <input type="text"
@@ -27,6 +27,10 @@
   </form>
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-  <button mat-button (click)="onSubmit()" cdkFocusInitial>Ok</button>
+  <button mat-button color="warn" mat-dialog-close>Close</button>
+  <button mat-button (click)="onSubmit()" *ngIf="!data.delete" cdkFocusInitial>Ok</button>
+  <button mat-button  (click)="deleteCard()" *ngIf="data.delete" cdkFocusInitial>Ok</button>
+</div>
+<div>
+  
 </div>

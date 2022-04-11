@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Subject } from 'rxjs';
 import { UICity } from '../../models/city.entity';
-import { SearchCityService } from '../../services/data-city.service';
+import { DataCityService } from '../../services/data-city.service';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-card-city',
@@ -10,18 +13,29 @@ import { SearchCityService } from '../../services/data-city.service';
 export class CardCityComponent implements OnInit {
   cities: UICity[] = [];
 
-  constructor(private searchCity: SearchCityService) {
+  constructor(
+    private searchCity: DataCityService,
+    public dialog: MatDialog) 
+  {
     this.cities = this.searchCity.getCitys();
   }
 
   ngOnInit(): void {
     this.searchCity.sbj.subscribe((data) => {
       this.cities = data;
-    });    
+    });
   }
 
   deleteCard(name: string): void {
-    this.cities = this.cities.filter( city => city.name !== name)
-    this.searchCity.setCitys(this.cities);
+    this.openDialog(name);
+  }
+
+  openDialog(name: string): void {
+    this.dialog.open(ModalComponent, {
+      data: {
+        delete: true,
+        cityName: name,
+      },
+    })
   }
 }

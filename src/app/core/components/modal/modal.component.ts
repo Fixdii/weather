@@ -50,7 +50,11 @@ export class ModalComponent implements OnInit {
 
   private _filter(value: string): string[] {
     this.filterValue = value.toLowerCase();
-    this.searchCity.cityData(this.filterValue);
+    this.searchCity.cityData(this.filterValue).subscribe((city) => {
+      this.options = city;
+    });
+    console.log(this.filterValue);
+    
     this.error = '';
     return this.options.filter((option) =>
       option.toLowerCase().includes(this.filterValue)

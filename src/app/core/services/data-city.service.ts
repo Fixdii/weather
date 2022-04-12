@@ -83,6 +83,7 @@ export class DataCityService {
       )
       .pipe(
         map((response) => {
+          if(response){
           return Object.values(response)
             .map((res: any) => {
               if (res['name']) {
@@ -90,6 +91,9 @@ export class DataCityService {
               }
             })
             .filter((c) => c !== undefined);
+          }else{
+            return [];
+          }
         })
       );
   }

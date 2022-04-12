@@ -23,4 +23,18 @@
     font-size: 48px; 
     color: rgb(240, 236, 0);
   }
+
+  &__button{
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .matMenu {
+   display: none;
+  }
+
+  .toolbar__button{
+    display: block;
+  }
 }

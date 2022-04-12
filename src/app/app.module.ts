@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 import { AppComponent } from './app.component';
@@ -37,7 +38,8 @@ import { CardCityComponent } from './core/components/card-city/card-city.compone
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

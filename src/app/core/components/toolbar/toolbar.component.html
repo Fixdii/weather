@@ -15,7 +15,7 @@
   <button
     mat-raised-button
     (click)="updateData()"
-    [disabled]="update || cities.length ===0"
+    [disabled]="update || cities.length === 0"
     class="toolbar__button"
     color="primary"
   >
@@ -30,4 +30,20 @@
   >
     Stop tracking
   </button>
+  <div class="matMenu">
+    <button  mat-raised-button [matMenuTriggerFor]="menu" color="primary">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openDialog()">Add card</button>
+      <button
+        mat-menu-item
+        (click)="updateData()"
+        [disabled]="update || cities.length === 0"
+      >
+        Start tracking
+      </button>
+      <button mat-menu-item (click)="stopUpdate()" [disabled]="!update">
+        Stop tracking
+      </button>
+    </mat-menu>
+  </div>
 </div>
